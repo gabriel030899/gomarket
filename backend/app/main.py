@@ -1,6 +1,10 @@
 from fastapi import FastAPI
 from app.database import engine, Base
 from app.models import user, market, product, price, receipt
+from app.routers import product, market, user
+
+
+
 
 app = FastAPI()
 
@@ -10,3 +14,7 @@ Base.metadata.create_all(bind=engine)
 @app.get("/")
 def read_root():
     return {"msg": "GoMarket API funcionando"}
+
+app.include_router(product.router)
+app.include_router(market.router)
+app.include_router(user.router)
