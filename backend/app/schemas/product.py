@@ -4,7 +4,7 @@ from typing import Optional
 class ProductBase(BaseModel):
     name: str
     brand: Optional[str] = None
-    category = Optional[str] = None
+    category: Optional[str] = None
 
 class ProductCreate(ProductBase):
     pass

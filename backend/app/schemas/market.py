@@ -1,9 +1,9 @@
 from pydantic import BaseModel
 
 class MarketBase(BaseModel):
-    name = str
-    address = str
-    city = str
+    name: str
+    address: str
+    city: str
 
 class MarketCreate(MarketBase):
     pass
